@@ -1,5 +1,9 @@
-package streaming
+package streaming.old
 
+/**
+ * @Date: 2021/3/2 17:00
+ * @Desc:
+ */
 object HbaseUtil extends Serializable {
 /*
 
