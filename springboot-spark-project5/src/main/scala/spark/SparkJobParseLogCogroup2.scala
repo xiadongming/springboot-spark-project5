@@ -12,7 +12,7 @@ object SparkJobParseLogCogroup2 {
     /** spark的运行环境 */
     val sparkconf: SparkConf = new SparkConf().setMaster("local[*]").setAppName("logParse")
     val sparkContext = new SparkContext(sparkconf)
-    val textFile = sparkContext.textFile("D:\\11eclipaseworkspace2_idea\\springboot-spark-project3\\springboot-spark-project2\\logfile")
+    val textFile = sparkContext.textFile("D:\\11eclipaseworkspace2_idea\\springboot-spark-project5\\springboot-spark-project5\\logfile")
     val timeUrl: RDD[(String, String)] = textFile.map(total => {
       val strings: Array[String] = total.split(" ")
 
