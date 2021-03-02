@@ -9,7 +9,7 @@ import org.apache.spark.{SparkConf, SparkContext}
 object SparkJob1WorkCount {
   def main(args: Array[String]): Unit = {
 
-    /** 创建spark的运行环境 */
+    /** 创建spark的运行  环境 */
     val conf = new SparkConf().setAppName("sparkJob1").setMaster("local[*]")
     val sparkContext = new SparkContext(conf)
     val textFile = sparkContext.textFile("D:\\11eclipaseworkspace2_idea\\springboot-spark-project3\\springboot-spark-project2\\logfile")
