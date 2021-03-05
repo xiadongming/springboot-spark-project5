@@ -1,12 +1,4 @@
-package streaming
-
-import com.google.common.eventbus.Subscribe
-import org.apache.kafka.clients.consumer.ConsumerRecord
-import org.apache.kafka.common.serialization.StringDeserializer
-import org.apache.spark.sql.SparkSession
-import org.apache.spark.streaming.dstream.{DStream, InputDStream}
-import org.apache.spark.streaming.kafka010.KafkaUtils
-import org.apache.spark.streaming.{Seconds, StreamingContext}
+package streaming.old
 
 /**
  * sparkStreaming整合kafka

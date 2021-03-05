@@ -1,8 +1,4 @@
-package streaming
-
-import org.apache.spark.sql.SparkSession
-import org.apache.spark.sql.streaming.ProcessingTime
-
+package streaming.old
 
 /**
  * sparkStreaming整合kafka，数据入mysql

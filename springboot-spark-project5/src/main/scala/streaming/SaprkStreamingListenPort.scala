@@ -18,6 +18,8 @@ object SaprkStreamingListenPort {
     val streamingContext: StreamingContext = new StreamingContext(sc, Seconds(5))
     val portContext: ReceiverInputDStream[String] = streamingContext.socketTextStream("127.0.0.1", 9123, StorageLevel.MEMORY_AND_DISK_SER)
 
+
+
     println(portContext)
 
   }

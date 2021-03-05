@@ -1,5 +1,9 @@
-package streaming
+package streaming.old
 
+/**
+ * @Date: 2021/3/5 10:41
+ * @Desc:
+ */
 object SparkStreamHbase {
   /*def main(args: Array[String]): Unit = {
     val spark  = SparkSession.builder().master("local[2]").appName("streaming").getOrCreate()
