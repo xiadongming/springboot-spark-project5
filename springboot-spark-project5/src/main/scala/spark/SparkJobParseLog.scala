@@ -13,8 +13,8 @@ object SparkJobParseLog {
   def main(args: Array[String]): Unit = {
     /** spark的运行环境 */
     val sparkconf: SparkConf = new SparkConf().setMaster("local[*]").setAppName("logParse")
-    val sparkContext = new SparkContext(sparkconf)
-    val textFile = sparkContext.textFile("D:\\11eclipaseworkspace2_idea\\springboot-spark-project3\\springboot-spark-project2\\logfile")
+    val sc = new SparkContext(sparkconf)
+    val textFile = sc.textFile("D:\\idea_workspace\\springboot-spark-project5\\springboot-spark-project5\\logfile")
     val timeUrl: RDD[(String, String)] = textFile.map(total => {
       val strings: Array[String] = total.split(" ")
 
@@ -26,6 +26,6 @@ object SparkJobParseLog {
       (timeUrl._1, timeUrl._2.size)
     })
    value.collect().foreach(println)
-    sparkContext.stop()
+    sc.stop()
   }
 }

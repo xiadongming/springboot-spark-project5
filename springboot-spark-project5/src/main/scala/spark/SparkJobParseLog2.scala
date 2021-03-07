@@ -14,7 +14,7 @@ object SparkJobParseLog2 {
     val conf: SparkConf = new SparkConf().setAppName("SparkJobParseLog2").setMaster("local[*]")
     val sparkContext = new SparkContext(conf)
 
-    val textFile = sparkContext.textFile("D:\\11eclipaseworkspace2_idea\\springboot-spark-project3\\springboot-spark-project2\\logfile")
+    val textFile = sparkContext.textFile("D:\\idea_workspace\\springboot-spark-project5\\springboot-spark-project5\\logfile")
     /** 第一步：先获取对应的key-value键值对 */
     val timeUrl: RDD[(String, String)] = textFile.map(total => {
       val strings: Array[String] = total.split(" ")
