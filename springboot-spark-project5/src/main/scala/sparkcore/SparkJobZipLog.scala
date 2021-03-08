@@ -1,4 +1,4 @@
-package spark
+package sparkcore
 
 /**
  * @Date: 2021/3/2 18:06
