@@ -14,14 +14,15 @@ object SparkSqlTest {
   def main(args: Array[String]): Unit = {
 
     val sparkConf: SparkConf = new SparkConf().setMaster("local[*]").setAppName("SparkSql")
-    val spark: SparkSession = SparkSession.builder().config(sparkConf).getOrCreate()
-    import spark.implicits._
-    val df: DataFrame = spark.read.json("D:\\idea_workspace\\springboot-spark-project5\\springboot-spark-project5\\data\\user.json")
+    val sparkSql: SparkSession = SparkSession.builder().config(sparkConf).getOrCreate()
+    /***  */
+    import sparkSql.implicits._
+    val df: DataFrame = sparkSql.read.json("D:\\idea_workspace\\springboot-spark-project5\\springboot-spark-project5\\data\\user.json")
     //  df.show()
 
     /** sql方式 */
     df.createOrReplaceTempView("user")
-    spark.sql("select * from user").show()
+    sparkSql.sql("select * from user").show()
 
     /** dsl方式  */
     df.select("age", "name").show()
@@ -31,7 +32,7 @@ object SparkSqlTest {
     //df.select('age).show
 
     /** rdd <=> dataFrame */
-    val valueRDD: RDD[(Int, String, Int)] = spark.sparkContext.makeRDD(List((1, "abc", 32), (2, "def", 29)))
+    val valueRDD: RDD[(Int, String, Int)] = sparkSql.sparkContext.makeRDD(List((1, "abc", 32), (2, "def", 29)))
     val df3: DataFrame = valueRDD.toDF("id", "name", "age")
     //df3.show()
     val rdd: RDD[Row] = df3.rdd
@@ -51,7 +52,7 @@ object SparkSqlTest {
 
 
     //关闭环境
-    spark.stop()
+    sparkSql.stop()
   }
   case class Person(id: Int, name: String, age: Int) {
 
