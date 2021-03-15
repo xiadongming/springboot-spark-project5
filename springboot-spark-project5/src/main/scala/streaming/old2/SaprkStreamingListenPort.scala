@@ -1,4 +1,4 @@
-package streaming
+package streaming.old2
 
 import org.apache.spark.storage.StorageLevel
 import org.apache.spark.streaming.dstream.ReceiverInputDStream
